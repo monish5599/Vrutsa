@@ -1,0 +1,178 @@
+/* ===== SERVICES SECTION ===== */
+
+.servicesSection {
+    background: #ffffff;
+    padding: 90px 100px;
+}
+
+/* ===== HEADER ===== */
+
+.servicesHeader {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.servicesTitle {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #000000;
+}
+
+/* ===== GRID (NO GAPS, ONLY LINES) ===== */
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ===== CARD ===== */
+
+.serviceCard {
+    position: relative;
+    padding: 70px 60px;
+    background: #ffffff;
+    overflow: hidden;
+
+    transition: background 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* ===== DIVIDER LINES (WITH INNER GAP) ===== */
+
+/* Vertical divider */
+.serviceCard::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    right: 0;
+    width: 1px;
+    background: #d1d5db;
+    transition: opacity 0.3s ease;
+}
+
+/* Horizontal divider */
+.serviceCard::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 0;
+    height: 1px;
+    background: #d1d5db;
+    transition: opacity 0.3s ease;
+}
+
+/* Remove extra borders */
+.serviceCard:nth-child(2)::before,
+.serviceCard:nth-child(4)::before {
+    display: none;
+}
+
+.serviceCard:nth-child(3)::after,
+.serviceCard:nth-child(4)::after {
+    display: none;
+}
+
+/* ===== BACKGROUND NUMBER ===== */
+
+.serviceNo {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-size: 72px;
+    font-weight: 800;
+    color: rgba(37, 99, 235, 0.18);
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+/* ===== TEXT ===== */
+
+.cardTitle {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 14px;
+    max-width: 320px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.cardDesc {
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.6;
+    max-width: 360px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+/* ===== HOVER EFFECT (EXACT LIKE IMAGE) ===== */
+
+.serviceCard:hover {
+    background: linear-gradient(180deg,
+            #0b4f7d 0%,
+            #0e6fa8 100%);
+    border-radius: 22px;
+    transform: translateY(-4px);
+}
+
+/* Hide divider lines on hover */
+.serviceCard:hover::before,
+.serviceCard:hover::after {
+    opacity: 0;
+}
+
+/* Text color */
+.serviceCard:hover .cardTitle,
+.serviceCard:hover .cardDesc {
+    color: #ffffff;
+}
+
+/* Background number */
+.serviceCard:hover .serviceNo {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* Hide divider lines on hover */
+.serviceCard:hover::before,
+.serviceCard:hover::after {
+    opacity: 0;
+}
+
+/* Text turns white */
+.serviceCard:hover .cardTitle,
+.serviceCard:hover .cardDesc {
+    color: #ffffff;
+}
+
+/* Number stays visible behind */
+.serviceCard:hover .serviceNo {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .serviceCard::before {
+        display: none;
+    }
+
+    .serviceCard::after {
+        left: 30px;
+        right: 30px;
+    }
+
+    .servicesSection {
+        padding: 70px 30px;
+    }
+}

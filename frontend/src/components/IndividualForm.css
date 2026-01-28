@@ -1,0 +1,128 @@
+.contact-wrapper {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.contact-wrapper h2{
+    text-align: center;
+    margin-bottom: 12px;
+}
+.contact-wrapper p {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* Center toggle */
+.toggle {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* equal width buttons */
+    width: 360px;
+    /* fixed clean width */
+    margin: 30px auto 40px auto;
+    border-radius: 40px;
+    border: 1.5px solid #0f74ae;
+    overflow: hidden;
+}
+
+/* buttons */
+.toggle button {
+    position: relative;
+    z-index: 2;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: #054070;
+    text-align: center;
+}
+
+/* active text */
+.toggle button.active {
+    color: #ffffff;
+}
+
+/* slider */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, #054070, #0f74ae);
+    border-radius: 40px;
+    transition: transform 0.35s ease-in-out;
+}
+
+/* positions */
+.slider.individual {
+    transform: translateX(0%);
+}
+
+.slider.business {
+    transform: translateX(100%);
+}
+.form-box {
+    border: 2px solid #0f74ae;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.form-box h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.row input,
+.row select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.checkbox {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, #054070, #0f74ae);
+    color: white;
+    font-weight: 600;
+}
+
+.buttons .outline {
+    background: transparent;
+    color: #054070;
+    border: 2px solid #054070;
+}
